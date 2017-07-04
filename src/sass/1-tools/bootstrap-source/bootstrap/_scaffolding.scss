@@ -26,7 +26,7 @@ html {
 
 body {
   font-family: $font-family-base;
-  font-size: 14px;
+  font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-color;
   background-color: $body-bg;
@@ -48,17 +48,15 @@ textarea {
 a {
   color: $link-color;
   text-decoration: none;
-  cursor: pointer;
 
   &:hover,
   &:focus {
     color: $link-hover-color;
-    outline: none !important;
-    transition: all 0.3s ease;
     text-decoration: $link-hover-decoration;
   }
-  &:active {
-    outline: none !important;
+
+  &:focus {
+    @include tab-focus;
   }
 }
 
@@ -122,7 +120,7 @@ hr {
 
 // Only display content to screen readers
 //
-// See: http://a11yproject.com/posts/how-to-hide-content/
+// See: http://a11yproject.com/posts/how-to-hide-content
 
 .sr-only {
   position: absolute;

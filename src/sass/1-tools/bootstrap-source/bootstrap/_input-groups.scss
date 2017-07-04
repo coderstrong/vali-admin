@@ -29,7 +29,7 @@
 
     width: 100%;
     margin-bottom: 0;
-    
+
     &:focus {
       z-index: 3;
     }
@@ -142,7 +142,6 @@
   // Negative margin for spacing, position for bringing hovered/focused/actived
   // element above the siblings.
   > .btn {
-    padding: 11px 15px;
     position: relative;
     + .btn {
       margin-left: -1px;
