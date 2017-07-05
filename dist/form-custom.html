@@ -90,7 +90,6 @@
                 <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
                 <li><a href="page-user.html"><i class="fa fa-circle-o"></i> User Page</a></li>
                 <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
-                <li><a href="page-calendar.html"><i class="fa fa-circle-o"></i> Calendar Page</a></li>
                 <li><a href="page-mailbox.html"><i class="fa fa-circle-o"></i> Mailbox</a></li>
                 <li><a href="page-error.html"><i class="fa fa-circle-o"></i> Error Page</a></li>
               </ul>
@@ -197,12 +196,12 @@
             <div class="card">
               <div class="card-title-w-btn">
                 <h3 class="title">Select2</h3>
-                <p><a class="btn btn-primary icon-btn" href="https://select2.github.io/examples.html" target="_blank"><i class="fa fa-file"></i>Docs</a></p>
+                <p><a class="btn btn-primary icon-btn" href="http://silviomoreto.github.io/bootstrap-select/examples" target="_blank"><i class="fa fa-file"></i>Docs</a></p>
               </div>
               <div class="card-body">
                 <p>This plugin can be used to convert select element into advanced componant.</p>
                 <h4>Demo</h4>
-                <select class="form-control" id="demoSelect">
+                <select class="form-control" id="demoSelect" data-live-search="true" multiple>
                   <optgroup label="Select Cities">
                     <option>Ahmedabad</option>
                     <option>Surat</option>
@@ -235,7 +234,7 @@
             <div class="card">
               <div class="card-title-w-btn">
                 <h3 class="title">Date Picker</h3>
-                <p><a class="btn btn-primary icon-btn" href="http://bootstrap-datepicker.readthedocs.org/en/stable/options.html" target="_blank"><i class="fa fa-file"></i>Docs</a></p>
+                <p><a class="btn btn-primary icon-btn" href="http://eonasdan.github.io/bootstrap-datetimepicker" target="_blank"><i class="fa fa-file"></i>Docs</a></p>
               </div>
               <div class="card-body">
                 <p>This plugin can be used to let the user select the date in a convinient way.</p>
@@ -252,9 +251,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="js/plugins/select2.min.js"></script>
-    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/plugins/moment-with-locales.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-select.min.js"></script>
     <script type="text/javascript">
       $('#sl').click(function(){
       	$('#tl').loadingBtn();
@@ -266,13 +265,13 @@
       	$('#tb').loadingBtnComplete({ html : "Sign In"});
       });
       
-      $('#demoDate').datepicker({
-      	format: "dd/mm/yyyy",
-      	autoclose: true,
-      	todayHighlight: true
+      $('#demoDate').datetimepicker({
+      	format: "DD/MM/YYYY hh:mm:ss"
       });
       
-      $('#demoSelect').select2();
+      $('#demoSelect').selectpicker({
+      	size: 5,
+      });
     </script>
   </body>
 </html>

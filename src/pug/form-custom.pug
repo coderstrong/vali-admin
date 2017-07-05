@@ -94,14 +94,14 @@ block content
 				.card-title-w-btn
 						h3.title Select2
 						p
-							a.btn.btn-primary.icon-btn(href="https://select2.github.io/examples.html",target="_blank")
+							a.btn.btn-primary.icon-btn(href="http://silviomoreto.github.io/bootstrap-select/examples",target="_blank")
 								i.fa.fa-file
 								| Docs
 
 				.card-body
 					p This plugin can be used to convert select element into advanced componant.
 					h4 Demo
-					select.form-control#demoSelect()
+					select.form-control#demoSelect(data-live-search="true", multiple)
 						optgroup(label="Select Cities")
 							option Ahmedabad
 							option Surat
@@ -131,7 +131,7 @@ block content
 				.card-title-w-btn
 						h3.title Date Picker
 						p
-							a.btn.btn-primary.icon-btn(href="http://bootstrap-datepicker.readthedocs.org/en/stable/options.html",target="_blank")
+							a.btn.btn-primary.icon-btn(href="http://eonasdan.github.io/bootstrap-datetimepicker",target="_blank")
 								i.fa.fa-file
 								| Docs
 
@@ -141,9 +141,9 @@ block content
 					input.form-control#demoDate(type="text",placeholder="Select Date")
 
 block specific-js
-	script(type='text/javascript', src="js/plugins/bootstrap-datepicker.min.js")
-	script(type='text/javascript', src="js/plugins/select2.min.js")
-	script(type='text/javascript', src="js/plugins/bootstrap-datepicker.min.js")
+	script(type='text/javascript', src="js/plugins/moment-with-locales.js")
+	script(type='text/javascript', src="js/plugins/bootstrap-datetimepicker.min.js")
+	script(type='text/javascript', src="js/plugins/bootstrap-select.min.js")
 	script(type="text/javascript").
 		$('#sl').click(function(){
 			$('#tl').loadingBtn();
@@ -155,10 +155,10 @@ block specific-js
 			$('#tb').loadingBtnComplete({ html : "Sign In"});
 		});
 
-		$('#demoDate').datepicker({
-			format: "dd/mm/yyyy",
-			autoclose: true,
-			todayHighlight: true
+		$('#demoDate').datetimepicker({
+			format: "DD/MM/YYYY hh:mm:ss"
 		});
 
-		$('#demoSelect').select2();
+		$('#demoSelect').selectpicker({
+			size: 5,
+		});

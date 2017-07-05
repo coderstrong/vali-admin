@@ -46,16 +46,16 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-		autoprefixer: {
-			options: {
-				browsers: ['last 2 versions', '> 5%'],
-				safe: true,
-				map: false
-			},
-			dist: {
-				src: ['dist/css/main.css']
-			}
-		}
+		// autoprefixer: {
+		// 	options: {
+		// 		browsers: ['last 2 versions', '> 5%'],
+		// 		safe: true,
+		// 		map: false
+		// 	},
+		// 	dist: {
+		// 		src: ['dist/css/main.css']
+		// 	}
+		// }
 	});
 
 	// Load the Grunt plugins.
@@ -65,5 +65,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['pug','sass','autoprefixer']);
+	// grunt.registerTask('build', ['pug','sass','autoprefixer']);
+	grunt.registerTask('build', ['pug','sass']);
 };
